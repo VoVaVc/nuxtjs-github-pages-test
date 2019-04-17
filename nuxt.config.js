@@ -1,7 +1,18 @@
 import pkg from './package'
 
+const routerBase =
+  process.env.DEPLOY_ENV === 'GH_PAGES'
+    ? {
+        router: {
+          base: `/${pkg.name}/`
+        }
+      }
+    : {}
+
 export default {
   mode: 'universal',
+
+  ...routerBase,
 
   /*
    ** Headers of the page
@@ -64,9 +75,6 @@ export default {
      */
     extend(config, { isDev, isClient }) {
       // Run ESLint on save
-      if (!isDev) {
-        config.output.publicPath = './_nuxt/'
-      }
       if (isDev && isClient) {
         config.module.rules.push({
           enforce: 'pre',
