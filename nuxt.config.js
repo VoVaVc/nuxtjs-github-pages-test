@@ -4,7 +4,7 @@ const routerBase =
   process.env.DEPLOY_ENV === 'GH_PAGES'
     ? {
         router: {
-          base: `/${pkg.name}/`
+          base: `./${pkg.name}/`
         }
       }
     : {}
@@ -63,6 +63,7 @@ export default {
    ** Build configuration
    */
   build: {
+    publicPath: `https://vovavc.github.io/${pkg.name}`,
     postcss: {
       preset: {
         features: {

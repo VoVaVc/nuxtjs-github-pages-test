@@ -4,7 +4,7 @@
       nuxtjs-github-pages-test
     </h1>
     <h2 class="subtitle">
-      My delightful Nuxt.js project
+      My delightful Nuxt.js project some changes here
     </h2>
   </div>
 </template>
